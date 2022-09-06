@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeu de Dés</title>
+    <meta name="description" content="jeu de dés deux joueurs" />
+    <meta name="keywords" content="jeu, dés, jeu javascript, jeu de dés, jeu en ligne" />
+    <meta name="author" content="Corentin Loignon" />
+    <meta name="robots" content="all" />
+    <meta property="og:locale" content="fr-FR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jeu de dés" />
+    <meta property="og:description" content="Création d’un petit jeu de dés sur navigateur web à l’aide du DOM." />
+    <meta property="og:site_name" content="Jeu de dés" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <a class="btn-modal" href="#rules">Règles</a>
+    <div id="rules" class="modal">
+        <div class="modal_content">
+            <h4>Règles</h4>
+            <p>Le jeu comprend 2 joueurs sur un seul et même écran.<br>
+                Chaque joueur possède un score temporaire (ROUND) et un score global (GLOBAL).<br>
+                À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu'il le
+                souhaite. Le
+                résultat d’un lancer est ajouté au ROUND.<br></p>
+            <p>Lors de son tour, le joueur peut décider à tout moment de:<br>
+                - Cliquer sur l’option “Hold”, qui permet d’envoyer les points du ROUND vers le GLOBAL. Ce sera alors le
+                tour de l’autre joueur.<br>
+                - Lancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour.
+                Le premier joueur qui atteint les 100 points sur global gagne le jeu.<br>
+            </p>
+            <a href="#" class="modal_close">&times;</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mt-5">
+            <button class="btn-new btn-game">
+                <img src="images/new.png" class="icone media">New game</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 player-0-panel">
+            <div class="player-0-panel">
+                <div class="text-center player-name m-5" id="name-0">Player 1</div>
+                <div class="text-center score" id="score0">0</div>
+            </div>
+            <div class="current-box">
+                <h3 class="text-center text-current">Current</h3>
+                <br />
+                <h2 class="text-center" id="current0">0</h2>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="row place">
+                <img id="dice" src="images/face5.png" alt="Dice" class="dice mx-auto m-5">
+            </div>
+        </div>
+        <div class="col-4 player-1-panel">
+            <div class="player-1-panel">
+                <div class="text-center player-name m-5" id="name-1">Player 2</div>
+                <div class="text-center score" id="score1">0</div>
+            </div>
+            <div class="current-box">
+                <h3 class="text-center text-current">Current</h3>
+                <br />
+                <h3 class="text-center" id="current1">0</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <button class="btn-roll btn-game">
+                    <p><img src="images/roll.png" class="icone media">Roll dice
+                </button></p><br /><br />
+                <button class="btn-hold btn-game">
+                    <p><img src="images/hold.png" class="icone media">Hold
+                </button></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
