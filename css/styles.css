@@ -176,6 +176,10 @@ button:focus {
 
 .text-current {
   color: #353535;
+  font-family: Lato;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 18px;
 }
 
 .dice {
@@ -183,54 +187,3 @@ button:focus {
   height: var(--size);
 }
 
-@media only screen and (max-width: 1300px) {
-  :root {
-    --size: 200px;
-  }
-
-  h3 {
-    font-size: 22px;
-  }
-
-  .player-name {
-    font-size: 25px;
-  }
-
-  .score {
-    font-size: 48px;
-  }
-
-  .media {
-    font-size: 12px;
-  }
-
-  .placement {
-    margin-top: 100px;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  :root {
-    --size: 100px;
-  }
-
-  h3 {
-    font-size: 22px;
-  }
-
-  .player-name {
-    font-size: 17px;
-  }
-
-  .score {
-    font-size: 48px;
-  }
-
-  .media {
-    font-size: 12px;
-  }
-
-  .placement {
-    margin-top: 100px;
-  }
-}

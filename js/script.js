@@ -1,5 +1,6 @@
 let scores, round, player, game, name1, name2;
 
+/* Bouton new */
 document.querySelector(".btn-new").addEventListener("click", init);
 
 function init() {
@@ -10,10 +11,10 @@ function init() {
   round = 0;
   game = true;
 
-  document.getElementById("score0").textContent = "0";
-  document.getElementById("score1").textContent = "0";
-  document.getElementById("current0").textContent = "0";
-  document.getElementById("current1").textContent = "0";
+  document.getElementById("score-0").textContent = "0";
+  document.getElementById("score-1").textContent = "0";
+  document.getElementById("current-0").textContent = "0";
+  document.getElementById("current-1").textContent = "0";
   document.getElementById("name-0").textContent = name1;
   document.getElementById("name-1").textContent = name2;
   document.querySelector(".player-0-panel").classList.add("active");
@@ -25,6 +26,7 @@ function init() {
   
 }
 
+/* Bouton roll */
 document.querySelector(".btn-roll").addEventListener("click", function () {
   if (game) {
     let dice = Math.floor(Math.random() * 6) + 1;
@@ -36,7 +38,7 @@ document.querySelector(".btn-roll").addEventListener("click", function () {
 
     if (dice !== 1) {
       round += dice;
-      document.querySelector("#current" + player).textContent = round;
+      document.querySelector("#current-" + player).textContent = round;
       if (scores[player] >= 100) {
         win();
       }
@@ -46,11 +48,12 @@ document.querySelector(".btn-roll").addEventListener("click", function () {
   }
 });
 
+/* Bouton hold */
 document.querySelector(".btn-hold").addEventListener("click", function () {
   if (game) {
     scores[player] += round;
 
-    document.querySelector("#score" + player).textContent = scores[player];
+    document.querySelector("#score-" + player).textContent = scores[player];
     if (scores[player] >= 100) {
       win();
     } else {
@@ -63,8 +66,8 @@ function nextPlayer() {
   player === 0 ? (player = 1) : (player = 0);
   round = 0;
 
-  document.getElementById("current0").textContent = "0";
-  document.getElementById("current1").textContent = "0";
+  document.getElementById("current-0").textContent = "0";
+  document.getElementById("current-1").textContent = "0";
 
   document.querySelector(".player-0-panel").classList.toggle("active");
   document.querySelector(".player-1-panel").classList.toggle("active");
